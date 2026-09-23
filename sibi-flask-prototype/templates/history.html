@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+
+{% block title %}Kamus Abjad SIBI | SIBI Bridge{% endblock %}
+{% block page_heading %}Kamus Abjad{% endblock %}
+
+{% block content %}
+
+<section class="kamus-hero">
+    <div class="kamus-hero-copy">
+        <p class="eyebrow">Kamus Isyarat</p>
+        <h2>Kamus Abjad Bahasa Isyarat SIBI</h2>
+        <p>
+            Jelajahi 26 huruf abjad A&ndash;Z dalam Sistem Isyarat Bahasa Indonesia (SIBI).
+            Klik salah satu kartu untuk melihat gambar peraga tangan lebih besar.
+        </p>
+    </div>
+
+    <div class="kamus-search">
+        <i class="ti ti-search"></i>
+        <input type="text" id="kamusSearch" placeholder="Cari huruf, misal: A" maxlength="1" autocomplete="off">
+    </div>
+</section>
+
+<section class="kamus-grid" id="kamusGrid">
+    {% for letter in letters %}
+    <button
+        type="button"
+        class="kamus-card"
+        data-letter="{{ letter }}"
+        data-src="{{ url_for('abjad_image', letter=letter) }}"
+    >
+        <span class="kamus-letter-badge">{{ letter }}</span>
+
+        <div class="kamus-card-img">
+            <img src="{{ url_for('abjad_image', letter=letter) }}" alt="Isyarat huruf {{ letter }}" loading="lazy">
+        </div>
+
+        <span class="kamus-card-caption">
+            Huruf {{ letter }}
+            <i class="ti ti-zoom-in"></i>
+        </span>
+    </button>
+    {% endfor %}
+</section>
+
+<p class="kamus-empty" id="kamusEmpty">
+    <i class="ti ti-mood-empty"></i>
+    Huruf tidak ditemukan. Coba huruf lain ya.
+</p>
+
+<section class="kamus-note">
+    <div class="kamus-note-icon">
+        <i class="ti ti-info-circle"></i>
+    </div>
+
+    <div>
+        <h3>Catatan</h3>
+        <p>
+            Gambar peraga di halaman ini digunakan sebagai referensi bentuk tangan untuk setiap huruf abjad SIBI.
+            Cocokkan bentuk tanganmu dengan gambar sebelum mencoba mode <strong>Real-time Translate</strong>.
+        </p>
+    </div>
+</section>
+
+<div class="kamus-modal" id="kamusModal">
+    <div class="kamus-modal-backdrop" id="kamusModalBackdrop"></div>
+
+    <div class="kamus-modal-content">
+        <button type="button" class="kamus-modal-close" id="kamusModalClose" aria-label="Tutup">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
+
+        <img id="kamusModalImg" src="" alt="">
+
+        <div class="kamus-modal-letter" id="kamusModalLetter"></div>
+    </div>
+</div>
+
+{% endblock %}

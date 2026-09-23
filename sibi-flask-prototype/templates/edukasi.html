@@ -1,0 +1,150 @@
+{% extends "base.html" %}
+
+{% block title %}Edukasi SIBI{% endblock %}
+
+{% block content %}
+<section class="page-header">
+    <div>
+        <p class="eyebrow">Learning Center</p>
+        <h1>Edukasi Bahasa Isyarat SIBI</h1>
+        <p>
+            Kenali konsep dasar SIBI, cara kerja sistem deteksi berbasis machine learning,
+            dan tips supaya gerakan tanganmu lebih mudah dikenali oleh sistem.
+        </p>
+    </div>
+</section>
+
+<section class="education-hero">
+    <div class="education-card main-education-card">
+        <span class="tag-orange">Apa itu SIBI?</span>
+        <h2>Sistem Isyarat Bahasa Indonesia</h2>
+        <p>
+            SIBI adalah sistem isyarat yang digunakan untuk membantu komunikasi dalam Bahasa Indonesia.
+            Di SIBI Bridge, gerakan tangan direkam secara real-time lewat kamera, lalu sistem
+            akan menampilkan hasil terjemahan dalam bentuk teks secara langsung.
+        </p>
+        <p>
+            Deteksi tangan menggunakan MediaPipe, kemudian hasilnya diklasifikasikan oleh model
+            machine learning (Random Forest) yang sudah dilatih untuk mengenali abjad SIBI.
+        </p>
+    </div>
+
+    <div class="education-card">
+        <span class="tag-blue">Tujuan Project</span>
+        <h3>Membantu Akses Komunikasi</h3>
+        <p>
+            Website ini dirancang sebagai media bantu agar komunikasi bahasa isyarat dapat diterjemahkan
+            menjadi teks secara lebih interaktif, cepat, dan mudah dipahami oleh pengguna umum.
+        </p>
+    </div>
+</section>
+
+<section class="education-grid">
+    <div class="education-card">
+        <div class="icon-bubble">
+            <i class="ti ti-video"></i>
+        </div>
+        <h3>1. Aktifkan Kamera</h3>
+        <p>
+            User menyalakan kamera dan memperagakan gerakan tangan secara langsung di depan layar.
+        </p>
+    </div>
+
+    <div class="education-card">
+        <div class="icon-bubble">
+            <i class="ti ti-frame"></i>
+        </div>
+        <h3>2. Deteksi Landmark Tangan</h3>
+        <p>
+            Setiap frame kamera dianalisis dengan MediaPipe untuk menemukan titik-titik (landmark) tangan.
+        </p>
+    </div>
+
+    <div class="education-card">
+        <div class="icon-bubble">
+            <i class="ti ti-hand-finger"></i>
+        </div>
+        <h3>3. Deteksi Gesture</h3>
+        <p>
+            Sistem akan membaca pola gerakan tangan atau titik penting tubuh menggunakan metode machine learning.
+        </p>
+    </div>
+
+    <div class="education-card">
+        <div class="icon-bubble">
+            <i class="ti ti-message-language"></i>
+        </div>
+        <h3>4. Output Teks</h3>
+        <p>
+            Hasil prediksi model akan ditampilkan sebagai teks terjemahan agar mudah dibaca oleh pengguna.
+        </p>
+    </div>
+</section>
+
+<section class="two-column-section">
+    <div class="education-card">
+        <span class="tag-green">Tips Kamera</span>
+        <h2>Agar gerakan mudah dikenali</h2>
+
+        <ul class="pretty-list">
+            <li>Gunakan pencahayaan yang cukup.</li>
+            <li>Pastikan tangan terlihat jelas di kamera.</li>
+            <li>Gunakan background yang tidak terlalu ramai.</li>
+            <li>Jangan terlalu jauh dari kamera.</li>
+            <li>Usahakan gerakan tidak terlalu cepat.</li>
+        </ul>
+    </div>
+
+    <div class="education-card">
+        <span class="tag-orange">Inklusif</span>
+        <h2>Etika komunikasi</h2>
+
+        <ul class="pretty-list">
+            <li>Berkomunikasi dengan sabar dan tidak terburu-buru.</li>
+            <li>Jangan memotong ekspresi atau gerakan lawan bicara.</li>
+            <li>Gunakan bahasa yang jelas dan mudah dipahami.</li>
+            <li>Hargai kebutuhan aksesibilitas setiap orang.</li>
+            <li>Gunakan teknologi sebagai alat bantu, bukan pengganti empati.</li>
+        </ul>
+    </div>
+</section>
+
+<section class="process-section">
+    <div class="section-title">
+        <p class="eyebrow">Prototype Flow</p>
+        <h2>Alur kerja sistem</h2>
+    </div>
+
+    <div class="process-flow">
+        <div class="process-item">
+            <span>01</span>
+            <h4>Aktifkan Kamera</h4>
+            <p>User menyalakan kamera di halaman Real-time Translate.</p>
+        </div>
+
+        <div class="process-arrow">→</div>
+
+        <div class="process-item">
+            <span>02</span>
+            <h4>Deteksi Tangan</h4>
+            <p>MediaPipe mendeteksi landmark tangan dari tiap frame kamera.</p>
+        </div>
+
+        <div class="process-arrow">→</div>
+
+        <div class="process-item">
+            <span>03</span>
+            <h4>Model ML</h4>
+            <p>Fitur landmark diklasifikasikan oleh model Random Forest.</p>
+        </div>
+
+        <div class="process-arrow">→</div>
+
+        <div class="process-item">
+            <span>04</span>
+            <h4>Translate</h4>
+            <p>Huruf hasil deteksi ditampilkan sebagai teks secara langsung.</p>
+        </div>
+    </div>
+</section>
+{% endblock %}

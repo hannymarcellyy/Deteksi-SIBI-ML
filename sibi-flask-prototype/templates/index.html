@@ -1,0 +1,259 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard | SIBI Bridge{% endblock %}
+{% block page_heading %}Selamat Datang{% endblock %}
+
+{% block content %}
+
+<section class="hero-showcase special-hero">
+    <div class="hero-copy">
+        <span class="hero-badge">
+            <i class="ti ti-hand-finger"></i>
+            SIBI to Text Experience
+        </span>
+
+        <h2>
+            Bantu pahami bahasa isyarat lewat
+            <span class="colorful-text">teks</span>
+            yang mudah dibaca.
+        </h2>
+
+        <p>
+            SIBI Bridge dirancang sebagai web app yang membantu pengguna menerjemahkan
+            bahasa isyarat secara real-time lewat kamera, dengan cara yang lebih interaktif.
+        </p>
+
+        <div class="hero-actions">
+            <a href="{{ url_for('translate') }}" class="primary-btn">
+                <i class="ti ti-video-plus"></i>
+                Mulai Translate
+            </a>
+
+            <a href="#kenali-sibi" class="ghost-btn">
+                <i class="ti ti-sparkles"></i>
+                Lihat Cara Kerja
+            </a>
+        </div>
+
+        <div class="hero-stats">
+            <div class="hero-stat">
+                <i class="ti ti-abc"></i>
+                <span>26 Huruf Abjad</span>
+            </div>
+
+            <div class="hero-stat">
+                <i class="ti ti-bolt"></i>
+                <span>Real-time</span>
+            </div>
+
+            <div class="hero-stat">
+                <i class="ti ti-mood-smile"></i>
+                <span>Gratis Digunakan</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="translation-stage">
+        <div class="stage-card video-stage">
+            <div class="stage-top">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <div class="sign-person">
+                <div class="person-head"></div>
+                <div class="person-body"></div>
+                <div class="person-arm left-arm"></div>
+                <div class="person-arm right-arm"></div>
+            </div>
+
+            <div class="gesture-chip chip-one">
+                <i class="ti ti-hand-finger"></i>
+                Gesture detected
+            </div>
+        </div>
+
+        <div class="flow-arrow">
+            <i class="ti ti-arrow-right"></i>
+        </div>
+
+        <div class="stage-card text-stage">
+            <div class="text-icon">
+                <i class="ti ti-message-language"></i>
+            </div>
+
+            <p class="typing-label">Hasil Translate</p>
+            <h3>Halo, senang bertemu denganmu.</h3>
+
+            <div class="mini-wave">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="landing-education" id="kenali-sibi">
+    <div class="section-heading">
+        <p class="eyebrow">Kenali SIBI</p>
+        <h2>Bahasa isyarat adalah jembatan komunikasi</h2>
+        <p>
+            SIBI atau Sistem Isyarat Bahasa Indonesia adalah salah satu sistem isyarat yang digunakan
+            untuk mendukung komunikasi dalam Bahasa Indonesia. Website ini dibuat sebagai alat bantu
+            agar video bahasa isyarat dapat ditampilkan dalam bentuk teks.
+        </p>
+    </div>
+
+    <div class="education-strip impact-strip">
+        <div class="edu-card impact-card">
+            <span class="impact-number">01</span>
+
+            <div class="edu-icon icon-teal">
+                <i class="ti ti-hand-finger"></i>
+            </div>
+
+            <h3>Bahasa isyarat punya makna</h3>
+            <p>
+                Gerakan tangan, ekspresi, dan posisi tubuh dapat menyampaikan pesan penting
+                dalam komunikasi sehari-hari.
+            </p>
+        </div>
+
+        <div class="edu-card impact-card">
+            <span class="impact-number">02</span>
+
+            <div class="edu-icon icon-orange">
+                <i class="ti ti-message-language"></i>
+            </div>
+
+            <h3>Teks membantu memahami</h3>
+            <p>
+                Terjemahan berbentuk teks membantu pengguna lain memahami pesan dari video
+                bahasa isyarat dengan lebih mudah.
+            </p>
+        </div>
+
+        <div class="edu-card impact-card">
+            <span class="impact-number">03</span>
+
+            <div class="edu-icon icon-blue">
+                <i class="ti ti-heart-handshake"></i>
+            </div>
+
+            <h3>Komunikasi lebih inklusif</h3>
+            <p>
+                SIBI Bridge menjadi jembatan agar komunikasi terasa lebih terbuka, ramah,
+                dan mudah diakses oleh lebih banyak orang.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="how-to-use">
+    <div class="how-to-card">
+        <div class="section-heading small-heading">
+            <p class="eyebrow">Cara Pakai</p>
+            <h2>Mulai translate dalam tiga langkah</h2>
+        </div>
+
+        <div class="steps-grid">
+            <div class="step-item">
+                <span class="step-num num-teal">01</span>
+                <h3>Nyalakan kamera</h3>
+                <p>
+                    Buka halaman Real-time Translate lalu aktifkan kamera.
+                </p>
+            </div>
+
+            <div class="step-arrow">
+                <i class="ti ti-arrow-right"></i>
+            </div>
+
+            <div class="step-item">
+                <span class="step-num num-orange">02</span>
+                <h3>Peragakan isyarat</h3>
+                <p>
+                    Pastikan gerakan tangan dan tubuh terlihat jelas di kamera.
+                </p>
+            </div>
+
+            <div class="step-arrow">
+                <i class="ti ti-arrow-right"></i>
+            </div>
+
+            <div class="step-item">
+                <span class="step-num num-blue">03</span>
+                <h3>Baca hasil teks</h3>
+                <p>
+                    Terjemahan akan ditampilkan dalam bentuk teks yang sederhana dan mudah dibaca.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="why-section">
+    <div class="section-heading">
+        <p class="eyebrow">Kenapa SIBI Bridge?</p>
+        <h2>Dibuat agar proses memahami bahasa isyarat terasa lebih sederhana.</h2>
+        <p>
+            SIBI Bridge dirancang sebagai alat bantu yang mudah digunakan oleh siapa saja,
+            terutama pengguna yang ingin memahami pesan dari video bahasa isyarat tanpa perlu
+            melihat detail teknis di balik sistem.
+        </p>
+    </div>
+
+    <div class="education-strip">
+        <div class="edu-card">
+            <div class="edu-icon icon-orange">
+                <i class="ti ti-click"></i>
+            </div>
+            <h3>Mudah digunakan</h3>
+            <p>
+                User cukup aktifkan kamera dan mulai peragakan isyarat, lalu hasil teks akan
+                ditampilkan secara jelas.
+            </p>
+        </div>
+
+        <div class="edu-card">
+            <div class="edu-icon icon-blue">
+                <i class="ti ti-eye"></i>
+            </div>
+            <h3>Tampilan jelas</h3>
+            <p>
+                Desain dibuat bersih dan fokus agar pengguna tidak bingung saat membaca hasil translate.
+            </p>
+        </div>
+
+        <div class="edu-card">
+            <div class="edu-icon icon-teal">
+                <i class="ti ti-heart-handshake"></i>
+            </div>
+            <h3>Lebih inklusif</h3>
+            <p>
+                Website ini mendukung komunikasi yang lebih ramah, terbuka, dan mudah diakses.
+            </p>
+        </div>
+    </div>
+</section>
+
+
+<section class="cta-section">
+    <div>
+        <p class="eyebrow">Siap mencoba?</p>
+        <h2>Mulai terjemahkan bahasa isyaratmu.</h2>
+        <p>
+            Aktifkan kamera dan coba pengalaman real-time translate yang lebih interaktif.
+        </p>
+    </div>
+
+    <a href="{{ url_for('translate') }}" class="primary-btn">
+        <i class="ti ti-arrow-right"></i>
+        Ke Halaman Translate
+    </a>
+</section>
+
+{% endblock %}

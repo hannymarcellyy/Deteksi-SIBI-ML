@@ -1,0 +1,225 @@
+{% extends "base.html" %}
+
+{% block title %}Tentang Project | SIBI Bridge{% endblock %}
+{% block page_heading %}Tentang Project{% endblock %}
+
+{% block content %}
+
+<section class="about-hero-card">
+    <div>
+        <p class="eyebrow">Tentang SIBI Bridge</p>
+        <h2>Membantu komunikasi bahasa isyarat menjadi lebih mudah dipahami.</h2>
+        <p>
+            SIBI Bridge adalah web app yang dirancang untuk membantu pengguna memahami
+            video bahasa isyarat melalui hasil terjemahan berbentuk teks. Website ini hadir
+            sebagai media bantu komunikasi yang lebih sederhana, inklusif, dan mudah digunakan.
+        </p>
+    </div>
+
+    <div class="about-hero-icon">
+        <i class="ti ti-heart-handshake"></i>
+    </div>
+</section>
+
+
+<section class="sdg-section">
+    <div class="sdg-section-icon">
+        <img src="{{ url_for('static', filename='images/logo-sdgs.png') }}" alt="Logo SDG 4: Pendidikan Berkualitas">
+    </div>
+
+    <div class="sdg-section-copy">
+        <p class="eyebrow">Kontribusi SDGs</p>
+        <h2>Mendukung SDG 4: Pendidikan Berkualitas</h2>
+        <p>
+            SIBI Bridge dikembangkan sebagai wujud dukungan terhadap Tujuan Pembangunan
+            Berkelanjutan (SDGs) ke-4; menjamin pendidikan yang inklusif dan berkualitas
+            serta mendorong kesempatan belajar seumur hidup bagi semua orang, termasuk penyandang
+            tuli dan pengguna bahasa isyarat.
+        </p>
+
+        <div class="sdg-point-list">
+            <div>
+                <i class="ti ti-accessible"></i>
+                <span>Membuka akses pendidikan inklusif bagi penyandang tuli dan pengguna bahasa isyarat.</span>
+            </div>
+
+            <div>
+                <i class="ti ti-device-laptop"></i>
+                <span>Menyediakan media belajar bahasa isyarat SIBI yang bisa diakses kapan saja lewat Kamus & Real-time Translate.</span>
+            </div>
+
+            <div>
+                <i class="ti ti-users-group"></i>
+                <span>Menjembatani kesenjangan komunikasi antara masyarakat umum dan pengguna bahasa isyarat.</span>
+            </div>
+
+            <div>
+                <i class="ti ti-bulb"></i>
+                <span>Mendorong kesempatan belajar seumur hidup melalui teknologi yang sederhana dan mudah diakses.</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="about-section-card">
+    <div class="section-heading small-heading">
+        <p class="eyebrow">Latar Belakang</p>
+        <h2>Masih ada jarak komunikasi antara pengguna bahasa isyarat dan masyarakat umum.</h2>
+        <p>
+            Tidak semua orang memahami bahasa isyarat, termasuk SIBI. Kondisi ini dapat membuat
+            komunikasi dengan penyandang tuli atau pengguna bahasa isyarat menjadi kurang lancar,
+            terutama di lingkungan pendidikan, layanan publik, maupun aktivitas sehari-hari.
+        </p>
+        <p>
+            Melalui SIBI Bridge, video bahasa isyarat dapat ditampilkan bersama hasil teks sehingga
+            pesan yang disampaikan menjadi lebih mudah dipahami oleh pengguna lain.
+        </p>
+    </div>
+</section>
+
+
+<section class="about-section-card">
+    <div class="section-heading small-heading">
+        <p class="eyebrow">Urgensi</p>
+        <h2>Mengapa website ini penting?</h2>
+    </div>
+
+    <div class="about-grid">
+        <div class="about-mini-card">
+            <div class="edu-icon">
+                <i class="ti ti-message-circle-question"></i>
+            </div>
+            <h3>Kurangnya pemahaman SIBI</h3>
+            <p>
+                Banyak masyarakat umum belum memahami bahasa isyarat, sehingga dibutuhkan media
+                bantu agar pesan dapat tersampaikan dengan lebih jelas.
+            </p>
+        </div>
+
+        <div class="about-mini-card">
+            <div class="edu-icon">
+                <i class="ti ti-accessible"></i>
+            </div>
+            <h3>Akses komunikasi inklusif</h3>
+            <p>
+                Website ini mendukung komunikasi yang lebih ramah bagi pengguna bahasa isyarat
+                dan orang yang belum memahami isyarat.
+            </p>
+        </div>
+
+        <div class="about-mini-card">
+            <div class="edu-icon">
+                <i class="ti ti-school"></i>
+            </div>
+            <h3>Dukungan pendidikan</h3>
+            <p>
+                SIBI Bridge dapat menjadi media pembelajaran dan pengenalan bahasa isyarat
+                di lingkungan kelas, kampus, atau kegiatan edukasi.
+            </p>
+        </div>
+    </div>
+</section>
+
+
+<section class="about-section-card">
+    <div class="section-heading small-heading">
+        <p class="eyebrow">Manfaat</p>
+        <h2>Apa manfaat SIBI Bridge?</h2>
+    </div>
+
+    <div class="benefit-list">
+        <div>
+            <i class="ti ti-book-2"></i>
+            <span>
+                <strong>Education</strong>
+                Membantu pengguna mengenal dan memahami bahasa isyarat secara lebih mudah.
+            </span>
+        </div>
+
+        <div>
+            <i class="ti ti-heart-handshake"></i>
+            <span>
+                <strong>Inclusivity</strong>
+                Mendukung interaksi yang lebih inklusif antara pengguna bahasa isyarat dan masyarakat umum.
+            </span>
+        </div>
+
+        <div>
+            <i class="ti ti-accessible"></i>
+            <span>
+                <strong>Accessibility</strong>
+                Memberikan alternatif media bantu komunikasi berbasis video dan teks.
+            </span>
+        </div>
+
+        <div>
+            <i class="ti ti-bolt"></i>
+            <span>
+                <strong>Efficiency</strong>
+                Membantu proses pemahaman pesan dari video bahasa isyarat menjadi lebih cepat dan praktis.
+            </span>
+        </div>
+    </div>
+</section>
+
+
+<section class="about-section-card">
+    <div class="section-heading small-heading">
+        <p class="eyebrow">Pengguna</p>
+        <h2>Untuk siapa website ini dibuat?</h2>
+    </div>
+
+    <div class="about-grid">
+        <div class="about-mini-card">
+            <div class="edu-icon">
+                <i class="ti ti-users"></i>
+            </div>
+            <h3>Masyarakat umum</h3>
+            <p>
+                Membantu orang yang belum memahami bahasa isyarat agar dapat membaca pesan
+                dalam bentuk teks.
+            </p>
+        </div>
+
+        <div class="about-mini-card">
+            <div class="edu-icon">
+                <i class="ti ti-user-heart"></i>
+            </div>
+            <h3>Pengguna bahasa isyarat</h3>
+            <p>
+                Menjadi media bantu agar pesan dari video bahasa isyarat dapat tersampaikan
+                kepada lebih banyak orang.
+            </p>
+        </div>
+
+        <div class="about-mini-card">
+            <div class="edu-icon">
+                <i class="ti ti-presentation"></i>
+            </div>
+            <h3>Lingkungan edukasi</h3>
+            <p>
+                Dapat digunakan sebagai prototype pembelajaran teknologi inklusif berbasis
+                bahasa isyarat.
+            </p>
+        </div>
+    </div>
+</section>
+
+
+<section class="cta-section">
+    <div>
+        <p class="eyebrow">Mulai Gunakan</p>
+        <h2>Coba terjemahkan bahasa isyaratmu.</h2>
+        <p>
+            Gunakan fitur real-time translate untuk mencoba pengalaman komunikasi yang lebih interaktif.
+        </p>
+    </div>
+
+    <a href="{{ url_for('translate') }}" class="primary-btn">
+        <i class="ti ti-arrow-right"></i>
+        Mulai Translate
+    </a>
+</section>
+
+{% endblock %}

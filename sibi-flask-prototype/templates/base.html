@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}SIBI Bridge{% endblock %}</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Icon Library -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <div class="bg-orb orb-one"></div>
+    <div class="bg-orb orb-two"></div>
+    <div class="bg-orb orb-three"></div>
+
+    <header class="mobile-topbar">
+        <a href="{{ url_for('index') }}" class="mobile-brand">
+            <span class="brand-mark brand-mark-logo">
+                <img src="{{ url_for('static', filename='images/logo-sibi.jpeg') }}" alt="Logo SIBI Bridge">
+            </span>
+            <strong>SIBI Bridge</strong>
+        </a>
+
+        <button type="button" class="hamburger-btn" id="hamburgerBtn" aria-label="Buka menu" aria-expanded="false">
+            <i class="ti ti-menu-2"></i>
+        </button>
+    </header>
+
+    <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+
+    <aside class="sidebar" id="sidebar">
+        <button type="button" class="sidebar-close-btn" id="sidebarCloseBtn" aria-label="Tutup menu">
+            <i class="ti ti-x"></i>
+        </button>
+
+        <a href="{{ url_for('index') }}" class="brand">
+            <span class="brand-mark brand-mark-logo">
+                <img src="{{ url_for('static', filename='images/logo-sibi.jpeg') }}" alt="Logo SIBI Bridge">
+            </span>
+
+            <span class="brand-text">
+                <strong>SIBI Bridge</strong>
+                <small>Sign Language Translator</small>
+            </span>
+        </a>
+
+        <nav class="nav-links">
+            <a class="{{ 'active' if request.endpoint == 'index' else '' }}" href="{{ url_for('index') }}">
+                <i class="ti ti-layout-dashboard"></i>
+                <span>Dashboard</span>
+            </a>
+
+            <a class="{{ 'active' if request.endpoint == 'translate' else '' }}" href="{{ url_for('translate') }}">
+                <i class="ti ti-video-plus"></i>
+                <span>Translate Video</span>
+            </a>
+
+            <a class="{{ 'active' if request.endpoint == 'history' else '' }}" href="{{ url_for('history') }}">
+                <i class="ti ti-abc"></i>
+                <span>Kamus SIBI</span>
+            </a>
+
+            <a class="{{ 'active' if request.endpoint == 'about' else '' }}" href="{{ url_for('about') }}">
+                <i class="ti ti-info-circle"></i>
+                <span>Tentang Project</span>
+            </a>
+        </nav>
+
+        <div class="sidebar-card">
+            <div class="mini-icon">
+                <i class="ti ti-bulb"></i>
+            </div>
+
+            <p>Tips Rekam</p>
+
+            <ul class="tips-list-mini">
+                <li>Tangan terlihat jelas</li>
+                <li>Kamera stabil</li>
+                <li>Pencahayaan cukup</li>
+                <li>Background sederhana</li>
+            </ul>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="topbar">
+            <div>
+                <p class="eyebrow">Inclusive Communication Platform</p>
+                <h1>{% block page_heading %}Dashboard{% endblock %}</h1>
+            </div>
+
+            <a href="{{ url_for('translate') }}" class="primary-btn">
+                <i class="ti ti-live-view"></i>
+                Real-time Translate
+            </a>
+        </header>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <section class="alerts">
+                    {% for category, message in messages %}
+                        <div class="alert {{ category }}">{{ message }}</div>
+                    {% endfor %}
+                </section>
+            {% endif %}
+        {% endwith %}
+
+        {% block content %}{% endblock %}
+    </main>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>

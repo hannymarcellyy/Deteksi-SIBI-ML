@@ -1,0 +1,144 @@
+{% extends "base.html" %}
+
+{% block title %}Translate Video | SIBI Bridge{% endblock %}
+{% block page_heading %}Translate Video{% endblock %}
+
+{% block content %}
+
+<section class="translate-hero">
+    <div>
+        <p class="eyebrow">Sign to Text</p>
+        <h2>Real-time translate bahasa isyarat</h2>
+        <p>
+            Gunakan kamera secara real-time untuk menerjemahkan bahasa isyarat menjadi teks.
+        </p>
+    </div>
+</section>
+
+<section class="translate-workspace">
+
+    <!-- REAL-TIME TRANSLATE -->
+    <div class="mode-panel active" id="realtime-panel">
+        <div class="realtime-layout">
+            <div class="camera-card realtime-camera">
+                <div class="camera-header">
+                    <div>
+                        <p class="eyebrow">Real-time Mode</p>
+                        <h2>Real-time translate</h2>
+                        <p>
+                            Aktifkan kamera untuk menerjemahkan gerakan bahasa isyarat
+                            secara langsung menggunakan model machine learning.
+                        </p>
+                    </div>
+
+                    <span class="live-pill" id="realtimeStatus">
+                        <span></span>
+                        Kamera belum aktif
+                    </span>
+                </div>
+
+                <div class="camera-frame realtime-frame">
+                    <video id="realtimePreview" autoplay muted playsinline></video>
+
+                    <div class="camera-placeholder" id="realtimePlaceholder">
+                        <i class="ti ti-live-photo"></i>
+                        <p>Klik “Mulai Real-time” untuk menyalakan kamera.</p>
+                    </div>
+
+                    <div class="camera-caption" id="cameraCaption"></div>
+                </div>
+
+                <div class="camera-actions">
+                    <button class="primary-btn" type="button" id="startRealtimeBtn">
+                        <i class="ti ti-player-play"></i>
+                        Mulai Real-time
+                    </button>
+
+                    <button class="danger-btn" type="button" id="stopRealtimeBtn" disabled>
+                        <i class="ti ti-player-stop"></i>
+                        Berhenti
+                    </button>
+                </div>
+            </div>
+
+            <div class="live-translation-card">
+                <div class="translate-live-top">
+                    <div>
+                        <p class="eyebrow">Live Text Output</p>
+                        <h2>Hasil translate</h2>
+                    </div>
+
+                    <span class="confidence-badge">Real-time</span>
+                </div>
+
+                <div class="translation-box" id="liveTranslationText">
+                    Tekan “Mulai Real-time” untuk menampilkan hasil translate.
+                </div>
+
+                <div class="translation-actions">
+                    <button class="secondary-btn" type="button" id="deleteLastBtn">
+                        <i class="ti ti-backspace"></i>
+                        Hapus Huruf
+                    </button>
+
+                    <button class="secondary-btn" type="button" id="spaceBtn">
+                        <i class="ti ti-space"></i>
+                        Spasi
+                    </button>
+
+                    <button class="danger-btn" type="button" id="clearTextBtn">
+                        <i class="ti ti-trash"></i>
+                        Reset Teks
+                    </button>
+                </div>
+
+                <div class="feedback-card" id="feedbackCard" style="display:none;">
+                    <div class="feedback-header">
+                        <div class="feedback-header-icon">
+                            <i class="ti ti-sparkles"></i>
+                        </div>
+
+                        <div>
+                            <h4>Cek dulu, Apakah udah sesuai?</h4>
+                            <p class="feedback-question">
+                                Ada huruf yang salah? Klik <strong>&times;</strong> nya buat dihapus,
+                                terus simpan sisanya.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="feedback-chips" id="feedbackChips"></div>
+
+                    <div class="feedback-actions">
+                        <button class="primary-btn" type="button" id="feedbackSaveBtn">
+                            <i class="ti ti-device-floppy"></i>
+                            Simpan Hasil Ini
+                        </button>
+                    </div>
+
+                    <p class="feedback-status" id="feedbackStatus"></p>
+                </div>
+
+                <div class="translation-notes">
+                    <div>
+                        <i class="ti ti-bulb"></i>
+                        <span>Pastikan tangan terlihat jelas.</span>
+                    </div>
+
+                    <div>
+                        <i class="ti ti-sun"></i>
+                        <span>Gunakan pencahayaan yang cukup.</span>
+                    </div>
+
+                    <div>
+                        <i class="ti ti-user-scan"></i>
+                        <span>Posisikan tubuh menghadap kamera.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+{% endblock %}
